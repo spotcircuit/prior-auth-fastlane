@@ -1,0 +1,8 @@
+{
+  "number": 1,
+  "title": "Feature: Basic Project Setup",
+  "body": "Initialize the Next.js 15 project with TypeScript and Tailwind CSS 4.0.\n\nCreate the foundational project structure including:\n- Next.js 15 with App Router\n- TypeScript configuration\n- Tailwind CSS 4.0 setup\n- Basic folder structure (app/, components/, lib/, types/)\n- ESLint and Prettier configuration\n- Initial README with project overview\n\nThis is the foundation that all other features will build upon.",
+  "state": "open",
+  "created_at": "2025-10-17T20:00:00Z",
+  "updated_at": "2025-10-17T20:00:00Z"
+}
