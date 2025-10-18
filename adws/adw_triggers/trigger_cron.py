@@ -104,19 +104,30 @@ def trigger_adw_workflow(issue_number: int) -> bool:
 
         cmd = [sys.executable, str(script_path), str(issue_number)]
 
+        # Create logs directory if it doesn't exist
+        logs_dir = script_path.parent.parent / "logs"
+        logs_dir.mkdir(exist_ok=True)
+
+        # Create log files for this workflow
+        log_file = logs_dir / f"issue-{issue_number}.log"
+
+        # Open log file for writing
+        log_f = open(log_file, "w")
+
         # Run the workflow in the background using Popen (non-blocking)
         # This allows the workflow to run independently without blocking the cron
         process = subprocess.Popen(
             cmd,
-            stdout=subprocess.DEVNULL,  # Discard stdout
-            stderr=subprocess.DEVNULL,  # Discard stderr
+            stdout=log_f,  # Write stdout to log file
+            stderr=subprocess.STDOUT,  # Merge stderr into stdout
             cwd=script_path.parent,
             env=get_safe_subprocess_env(),
             start_new_session=True  # Detach from parent process
         )
 
         print(f"INFO: Successfully triggered workflow for issue #{issue_number} (PID: {process.pid})")
-        print(f"INFO: Workflow running in background, check GitHub comments for progress")
+        print(f"INFO: Workflow running in background")
+        print(f"INFO: Watch progress: tail -f {log_file}")
         return True
 
     except Exception as e:
