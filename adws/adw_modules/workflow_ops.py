@@ -231,9 +231,14 @@ def generate_branch_name(
     issue_class: IssueClassSlashCommand,
     adw_id: str,
     logger: logging.Logger,
+    working_dir: Optional[str] = None,
 ) -> Tuple[Optional[str], Optional[str]]:
     """Generate a git branch name for the issue.
     Returns (branch_name, error_message) tuple."""
+    # If no working_dir provided, use project root (parent of adws directory)
+    if working_dir is None:
+        working_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
     # Remove the leading slash from issue_class for the branch name
     issue_type = issue_class.replace("/", "")
 
@@ -247,6 +252,7 @@ def generate_branch_name(
         slash_command="/generate_branch_name",
         args=[issue_type, adw_id, minimal_issue_json],
         adw_id=adw_id,
+        working_dir=working_dir,
     )
 
     response = execute_template(request)
