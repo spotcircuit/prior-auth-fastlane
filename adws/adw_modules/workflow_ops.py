@@ -105,10 +105,14 @@ def extract_adw_info(text: str, temp_adw_id: str) -> ADWExtractionResult:
 
 
 def classify_issue(
-    issue: GitHubIssue, adw_id: str, logger: logging.Logger
+    issue: GitHubIssue, adw_id: str, logger: logging.Logger, working_dir: Optional[str] = None
 ) -> Tuple[Optional[IssueClassSlashCommand], Optional[str]]:
     """Classify GitHub issue and return appropriate slash command.
     Returns (command, error_message) tuple."""
+
+    # If no working_dir provided, use project root (parent of adws directory)
+    if working_dir is None:
+        working_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
     # Use the classify_issue slash command template with minimal payload
     # Only include the essential fields: number, title, body
@@ -121,6 +125,7 @@ def classify_issue(
         slash_command="/classify_issue",
         args=[minimal_issue_json],
         adw_id=adw_id,
+        working_dir=working_dir,
     )
 
     logger.debug(f"Classifying issue: {issue.title}")

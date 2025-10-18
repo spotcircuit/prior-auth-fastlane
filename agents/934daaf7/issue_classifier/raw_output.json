@@ -1,0 +1,97 @@
+[
+  {
+    "type": "system",
+    "subtype": "init",
+    "cwd": "/mnt/c/Users/Big Daddy Pyatt/TAC/agentic-prompt-engineering/apps/prior-auth-fastlane/adws",
+    "session_id": "aa875b77-1c37-4962-97b1-62f0114ca35b",
+    "tools": [
+      "Task",
+      "Bash",
+      "Glob",
+      "Grep",
+      "ExitPlanMode",
+      "Read",
+      "Edit",
+      "Write",
+      "NotebookEdit",
+      "WebFetch",
+      "TodoWrite",
+      "WebSearch",
+      "BashOutput",
+      "KillShell",
+      "Skill",
+      "SlashCommand"
+    ],
+    "mcp_servers": [],
+    "model": "claude-sonnet-4-5-20250929",
+    "permissionMode": "bypassPermissions",
+    "slash_commands": [
+      "architect",
+      "prime-guard",
+      "check-prime",
+      "debug",
+      "prime",
+      "integrity",
+      "lyra",
+      "review",
+      "plan",
+      "align",
+      "attach",
+      "ultrathink",
+      "refactor",
+      "new",
+      "analyze",
+      "compact",
+      "context",
+      "cost",
+      "init",
+      "output-style:new",
+      "pr-comments",
+      "release-notes",
+      "todos",
+      "review",
+      "security-review"
+    ],
+    "apiKeySource": "ANTHROPIC_API_KEY",
+    "claude_code_version": "2.0.22",
+    "output_style": "default",
+    "agents": [
+      "general-purpose",
+      "statusline-setup",
+      "output-style-setup",
+      "Explore",
+      "documentation-updater",
+      "css-mobile-optimizer",
+      "seo-page-optimizer"
+    ],
+    "uuid": "a713b8d5-dd33-45be-bde6-eebf424161d9"
+  },
+  {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 219,
+    "duration_api_ms": 0,
+    "num_turns": 1,
+    "result": "",
+    "session_id": "aa875b77-1c37-4962-97b1-62f0114ca35b",
+    "total_cost_usd": 0,
+    "usage": {
+      "input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 0,
+      "server_tool_use": {
+        "web_search_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      }
+    },
+    "modelUsage": {},
+    "permission_denials": [],
+    "uuid": "34485cce-2da7-4d5f-b1e0-a5d40dfec2df"
+  }
+]
