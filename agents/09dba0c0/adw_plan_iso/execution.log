@@ -1,0 +1,208 @@
+2025-10-17 19:03:36 - INFO - ADW Logger initialized - ID: 09dba0c0
+2025-10-17 19:03:36 - DEBUG - Log file: /mnt/c/Users/Big Daddy Pyatt/TAC/agentic-prompt-engineering/apps/prior-auth-fastlane/agents/09dba0c0/adw_plan_iso/execution.log
+2025-10-17 19:03:36 - INFO - 🔍 Found existing state from /mnt/c/Users/Big Daddy Pyatt/TAC/agentic-prompt-engineering/apps/prior-auth-fastlane/agents/09dba0c0/adw_state.json
+2025-10-17 19:03:36 - INFO - State: {
+  "adw_id": "09dba0c0",
+  "issue_number": "1",
+  "branch_name": null,
+  "plan_file": null,
+  "issue_class": null,
+  "worktree_path": null,
+  "backend_port": null,
+  "frontend_port": null,
+  "model_set": "base",
+  "all_adws": []
+}
+2025-10-17 19:03:36 - INFO - Found existing ADW state for ID: 09dba0c0
+2025-10-17 19:03:36 - INFO - 🔍 Found existing state from /mnt/c/Users/Big Daddy Pyatt/TAC/agentic-prompt-engineering/apps/prior-auth-fastlane/agents/09dba0c0/adw_state.json
+2025-10-17 19:03:36 - INFO - State: {
+  "adw_id": "09dba0c0",
+  "issue_number": "1",
+  "branch_name": null,
+  "plan_file": null,
+  "issue_class": null,
+  "worktree_path": null,
+  "backend_port": null,
+  "frontend_port": null,
+  "model_set": "base",
+  "all_adws": []
+}
+2025-10-17 19:03:36 - INFO - ADW Logger initialized - ID: 09dba0c0
+2025-10-17 19:03:36 - DEBUG - Log file: /mnt/c/Users/Big Daddy Pyatt/TAC/agentic-prompt-engineering/apps/prior-auth-fastlane/agents/09dba0c0/adw_plan_iso/execution.log
+2025-10-17 19:03:36 - INFO - ADW Plan Iso starting - ID: 09dba0c0, Issue: 1
+2025-10-17 19:03:36 - INFO - Allocated ports - Backend: 9100, Frontend: 9200
+2025-10-17 19:03:37 - DEBUG - Fetched issue: {
+  "number": 1,
+  "title": "Feature: Basic Project Setup",
+  "body": "Initialize the Next.js 15 project with TypeScript and Tailwind CSS 4.0.\n\n## Requirements\n\nCreate the foundational project structure including:\n- Next.js 15 with App Router\n- TypeScript configuration\n- Tailwind CSS 4.0 setup\n- Basic folder structure (app/, components/, lib/, types/)\n- ESLint and Prettier configuration\n- Initial README with project overview\n- Package.json with proper dependencies\n\n## Context\n\nThis is the foundation that all other features will build upon. Follow the tech stack specified in the main plan.md:\n- Next.js 15 (React, App Router)\n- TypeScript\n- Tailwind CSS 4.0\n- Bun as package manager\n\n## Acceptance Criteria\n\n- [ ] Next.js 15 project initialized\n- [ ] TypeScript configured and working\n- [ ] Tailwind CSS 4.0 installed and configured\n- [ ] Basic folder structure in place\n- [ ] README documents project setup\n- [ ] All commands run without errors: bun install, bun run dev, bun run build",
+  "state": "OPEN",
+  "author": {
+    "id": "U_kgDOCkOi7g",
+    "login": "spotcircuit",
+    "name": "Brian Pyatt",
+    "is_bot": false
+  },
+  "assignees": [],
+  "labels": [],
+  "milestone": null,
+  "comments": [
+    {
+      "id": "IC_kwDOQEkraM7LsilQ",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 1515e239_ops: ✅ Starting isolated planning phase",
+      "createdAt": "2025-10-17T22:53:42Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7Lsilf",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 1515e239_ops: 🔍 Using state\n```json\n{\n  \"adw_id\": \"1515e239\",\n  \"issue_number\": \"1\",\n  \"branch_name\": null,\n  \"plan_file\": null,\n  \"issue_class\": null,\n  \"worktree_path\": null,\n  \"backend_port\": 9100,\n  \"frontend_port\": 9200,\n  \"model_set\": \"base\",\n  \"all_adws\": [\n    \"adw_plan_iso\"\n  ]\n}\n```",
+      "createdAt": "2025-10-17T22:53:42Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7Lsim8",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 1515e239_ops: ❌ Error classifying issue: Invalid command selected: ",
+      "createdAt": "2025-10-17T22:53:47Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7Lsjv2",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "adw",
+      "createdAt": "2025-10-17T22:58:04Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskIF",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 9ee75885_ops: ✅ Starting isolated planning phase",
+      "createdAt": "2025-10-17T22:59:37Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskIR",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 9ee75885_ops: 🔍 Using state\n```json\n{\n  \"adw_id\": \"9ee75885\",\n  \"issue_number\": \"1\",\n  \"branch_name\": null,\n  \"plan_file\": null,\n  \"issue_class\": null,\n  \"worktree_path\": null,\n  \"backend_port\": 9105,\n  \"frontend_port\": 9205,\n  \"model_set\": \"base\",\n  \"all_adws\": [\n    \"adw_plan_iso\"\n  ]\n}\n```",
+      "createdAt": "2025-10-17T22:59:38Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskJn",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 9ee75885_ops: ❌ Error classifying issue: Invalid command selected: ",
+      "createdAt": "2025-10-17T22:59:43Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskQ2",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 4b210702_ops: ✅ Starting isolated planning phase",
+      "createdAt": "2025-10-17T23:00:07Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskRM",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 4b210702_ops: 🔍 Using state\n```json\n{\n  \"adw_id\": \"4b210702\",\n  \"issue_number\": \"1\",\n  \"branch_name\": null,\n  \"plan_file\": null,\n  \"issue_class\": null,\n  \"worktree_path\": null,\n  \"backend_port\": 9102,\n  \"frontend_port\": 9202,\n  \"model_set\": \"base\",\n  \"all_adws\": [\n    \"adw_plan_iso\"\n  ]\n}\n```",
+      "createdAt": "2025-10-17T23:00:08Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskYF",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 4b210702_ops: ✅ Issue classified as: /feature",
+      "createdAt": "2025-10-17T23:00:17Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LskZo",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "[ADW-AGENTS] 4b210702_ops: ❌ Error creating worktree: Failed to create worktree: Preparing worktree (new branch '')\nfatal: '' is not a valid branch name\n",
+      "createdAt": "2025-10-17T23:00:22Z",
+      "updatedAt": null
+    },
+    {
+      "id": "IC_kwDOQEkraM7LslTU",
+      "author": {
+        "id": null,
+        "login": "spotcircuit",
+        "name": null,
+        "is_bot": false
+      },
+      "body": "adw",
+      "createdAt": "2025-10-17T23:03:31Z",
+      "updatedAt": null
+    }
+  ],
+  "createdAt": "2025-10-17T22:40:57Z",
+  "updatedAt": "2025-10-17T23:03:31Z",
+  "closedAt": null,
+  "url": "https://github.com/spotcircuit/prior-auth-fastlane/issues/1"
+}
+2025-10-17 19:03:39 - DEBUG - Classifying issue: Feature: Basic Project Setup
+2025-10-17 19:03:42 - DEBUG - Classification response: {
+  "output": "",
+  "success": true,
+  "session_id": "9dd06018-7fb4-4c4a-8311-c7965b8ee1f5",
+  "retry_code": "none",
+  "output_tokens": null,
+  "total_cost_usd": 0.0
+}
+2025-10-17 19:03:42 - ERROR - Error classifying issue: Invalid command selected: 

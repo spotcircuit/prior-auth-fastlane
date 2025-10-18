@@ -99,29 +99,26 @@ def trigger_adw_workflow(issue_number: int) -> bool:
     """Trigger the ADW plan and build workflow for a specific issue."""
     try:
         script_path = Path(__file__).parent.parent / "adw_plan_build_iso.py"
-        
+
         print(f"INFO: Triggering ADW workflow for issue #{issue_number}")
-        
+
         cmd = [sys.executable, str(script_path), str(issue_number)]
-        
-        # Run the manual trigger script with filtered environment
-        result = subprocess.run(
+
+        # Run the workflow in the background using Popen (non-blocking)
+        # This allows the workflow to run independently without blocking the cron
+        process = subprocess.Popen(
             cmd,
-            capture_output=True,
-            text=True,
+            stdout=subprocess.DEVNULL,  # Discard stdout
+            stderr=subprocess.DEVNULL,  # Discard stderr
             cwd=script_path.parent,
-            env=get_safe_subprocess_env()
+            env=get_safe_subprocess_env(),
+            start_new_session=True  # Detach from parent process
         )
-        
-        if result.returncode == 0:
-            print(f"INFO: Successfully triggered workflow for issue #{issue_number}")
-            # DEBUG level - not printing output
-            return True
-        else:
-            print(f"ERROR: Failed to trigger workflow for issue #{issue_number}")
-            print(f"ERROR: {result.stderr}")
-            return False
-            
+
+        print(f"INFO: Successfully triggered workflow for issue #{issue_number} (PID: {process.pid})")
+        print(f"INFO: Workflow running in background, check GitHub comments for progress")
+        return True
+
     except Exception as e:
         print(f"ERROR: Exception while triggering workflow for issue #{issue_number}: {e}")
         return False
