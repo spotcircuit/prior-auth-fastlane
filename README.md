@@ -35,6 +35,86 @@ cp .env.example .env.local
 
 Fill in the required environment variables in `.env.local`.
 
+## Database Setup
+
+This project uses [Neon Serverless Postgres](https://neon.tech) with [Prisma ORM](https://www.prisma.io).
+
+### Prerequisites
+
+- Neon account (free tier available)
+- Database connection strings (see Environment Variables)
+
+### Initial Setup
+
+1. **Create Neon Database:**
+   - Sign up at https://neon.tech
+   - Create a new project: "prior-auth-fastlane"
+   - Copy the connection string from Connection Details
+   - You need both:
+     - **Pooled connection** (for app queries): ends with `?pgbouncer=true`
+     - **Direct connection** (for migrations): standard PostgreSQL URL
+
+2. **Configure Environment Variables:**
+   ```bash
+   cp .env.example .env.local
+   ```
+   Add your Neon connection strings to `.env.local`:
+   - `DATABASE_URL` = Pooled connection
+   - `DIRECT_DATABASE_URL` = Direct connection
+
+3. **Run Migrations:**
+   ```bash
+   bun run db:migrate
+   ```
+   This creates all database tables and schema.
+
+4. **Verify Setup:**
+   ```bash
+   bun run db:studio
+   ```
+   Opens Prisma Studio to browse your database.
+
+### Database Commands
+
+- `bun run db:migrate` - Create and apply new migrations
+- `bun run db:migrate:deploy` - Apply migrations in production
+- `bun run db:generate` - Generate Prisma Client (auto-runs after migrate)
+- `bun run db:studio` - Open Prisma Studio GUI
+- `bun run db:seed` - Populate database with test data
+- `bun run db:reset` - Reset database (WARNING: deletes all data)
+
+### Schema Overview
+
+The database uses a multi-tenant architecture with the following core tables:
+
+- **tenants** - Organization/clinic isolation
+- **users** - User accounts with role-based access
+- **ingestions** - Email/PDF ingestion tracking
+- **cases** - Prior authorization cases
+- **case_codes** - CPT/HCPCS procedure codes
+- **tasks** - Action items assigned to users
+- **rulesets** - Payer-specific rules
+- **events** - System event log
+- **audit_logs** - Compliance audit trail
+
+All domain tables include `tenant_id` for data isolation.
+
+### Prisma Client Usage
+
+Import the database client in your code:
+
+```typescript
+import { db } from '@/lib/db'
+
+// Query examples
+const cases = await db.case.findMany({
+  where: { tenant_id: tenantId, status: 'pending' },
+  include: { codes: true, tasks: true }
+})
+```
+
+See [Prisma Client documentation](https://www.prisma.io/docs/concepts/components/prisma-client) for query API.
+
 ### Development
 
 Start the development server:
@@ -47,13 +127,24 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 
 ## Available Scripts
 
+### Development
 - `bun run dev` - Start development server with hot reload
 - `bun run build` - Build the application for production
 - `bun run start` - Start the production server
+
+### Code Quality
 - `bun run lint` - Run ESLint to check code quality
 - `bun run type-check` - Run TypeScript compiler to check types
 - `bun run format` - Format all files with Prettier
 - `bun run format:check` - Check if files are formatted correctly
+
+### Database
+- `bun run db:migrate` - Create and apply new migrations
+- `bun run db:migrate:deploy` - Apply migrations in production
+- `bun run db:generate` - Generate Prisma Client
+- `bun run db:studio` - Open Prisma Studio GUI
+- `bun run db:seed` - Populate database with test data
+- `bun run db:reset` - Reset database (deletes all data)
 
 ## Project Structure
 
